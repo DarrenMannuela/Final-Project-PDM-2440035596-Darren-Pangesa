@@ -5,6 +5,9 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
 
+pygame.freetype.init()
+
+
 class Buttons:
     def __init__(self, text: str, rect: tuple, font_size: int, font_colour: tuple):
         self.mouse_over = False

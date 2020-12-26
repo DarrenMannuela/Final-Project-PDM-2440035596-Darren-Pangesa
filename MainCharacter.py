@@ -13,6 +13,9 @@ def sorted_alphanumeric(data):
     return sorted(data, key=alphanum_key)
 
 
+pygame.freetype.init()
+
+
 class MainCharacter:
     def __init__(self, lvl=1, hp=20, atk=5, exp=0):
         # Start position of sprite
@@ -205,4 +208,4 @@ class MainCharacter:
     def draw_text(text: str, font_size: int, font_colour: tuple):
         font = pygame.freetype.Font("ARCADECLASSIC.TTF", font_size)
         text, _ = font.render(text, font_colour)
-        return text.convert_alpha()
+        return text

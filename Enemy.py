@@ -14,7 +14,11 @@ def sorted_alphanumeric(data):
     return sorted(data, key=alphanum_key)
 
 
+pygame.freetype.init()
+
+
 class Enemy:
+
     def __init__(self, directory: str, lvl: int, hp: float, atk: float):
         self.directory = directory
         self.lvl = lvl
@@ -204,4 +208,4 @@ class Enemy:
     def draw_text(text: str, font_size: int, font_colour: tuple):
         font = pygame.freetype.Font("ARCADECLASSIC.TTF", font_size)
         text, _ = font.render(text, font_colour)
-        return text.convert_alpha()
+        return text
