@@ -127,6 +127,7 @@ def pause_screen():
 
     pause_text = draw_text("PAUSED", 60, WHITE)
     to_resume = draw_text("TO CONTINUE PRESS  P", 30, WHITE)
+    to_quit = draw_text("TO QUIT PRESS  Q", 30, WHITE)
 
     pause = True
     while pause:
@@ -137,10 +138,13 @@ def pause_screen():
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_p:
                     pause = False
-
+                if event.key == pygame.K_q:
+                    pause = False
+                    start_screen()
         canvas.fill(BLACK)
         canvas.blit(pause_text, (225, 200))
         canvas.blit(to_resume, (180, 250))
+        canvas.blit(to_quit, (220, 300))
         window.blit(canvas, (0, 0))
         pygame.display.flip()
 
