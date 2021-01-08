@@ -42,10 +42,6 @@ def draw_text(text: str, font_size: int, font_colour: tuple):
     return text.convert_alpha()
 
 
-# Make Player
-player = MainCharacter()
-
-
 # Pick an enemy
 def pick_enemy(lvl: int):
     pygame.freetype.init()
@@ -104,6 +100,8 @@ def controls_screen():
             if event.type == pygame.KEYUP:
                 # When pressing enter go to game
                 if event.key == pygame.K_RETURN:
+                    # Make Player
+                    player = MainCharacter()
                     battle_sys(player, 1)
 
                 # When pressing the escape key return back to start screen
